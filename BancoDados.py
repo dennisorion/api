@@ -44,3 +44,11 @@ for chave in chaves:
 
 print({"dados": "o id informado não existe no banco", "statusCode": 404})
 
+    def excluirAlimento(self,id: int):
+        chaves = self.dados.keys()
+        for chave in chaves:
+            if id == chave:
+                alimentoexcluir = self.dados[id]
+                del self.dados[id]
+                return {"alimentoexcluido": alimentoexcluir, "info":
+                        "alimento excluido com sucesso", "statusCode": 200}
