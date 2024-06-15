@@ -1,0 +1,22 @@
+#representação da classe Alimentos
+from pydantic import BaseModel
+class Alimento:
+    def __init__(self, id : int, nome : str, preco: float, disponibilidade: bool, quantidade: int, imagem: str):
+        self.id = id
+        self.nome= nome
+        self.preco= preco
+        self.disponibilidade= disponibilidade
+        self.quantidade= quantidade
+        self.imagem= imagem
+
+class ModelAlimento(BaseModel):
+    id : int
+    nome: str
+    preco : float
+    disponibilidade: bool
+    quantidade: int
+    imagem: str
+
+alimento1 = Alimento(1, 'uva', 10.50, True, 10, '')
+
+# print(alimento1.nome)
